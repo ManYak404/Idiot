@@ -1,2 +1,2 @@
 # Idiot
-Classic Card Game
+Classic Ukrainian Card Game
