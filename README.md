@@ -1,2 +1,2 @@
 # Idiot
-Classic Russian Card Game
+Classic Card Game
