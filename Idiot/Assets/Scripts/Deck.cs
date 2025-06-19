@@ -3,12 +3,19 @@ using System.Collections.Generic;
 
 public class Deck : MonoBehaviour
 {
+    private PlayingCard trumpCard;
     public List<PlayingCard> cards = new List<PlayingCard>();
 
     void Start()
     {
+        
+    }
+
+    public void StartDeck()
+    {
         CreateDeck();
         ShuffleDeck();
+        CreateTrumpSuit();
     }
 
     void CreateDeck()
@@ -32,11 +39,28 @@ public class Deck : MonoBehaviour
         }
     }
 
+    private void CreateTrumpSuit()
+    {
+        trumpCard = cards[0]; // Take the last card as the trump card
+
+        Debug.Log($"Trump suit is: {trumpCard.suit}");
+    }
+
+    public PlayingCard GetTrumpCard()
+    {
+        return trumpCard;
+    }
+
     public PlayingCard DrawCard()
     {
         if (cards.Count == 0) return null;
         PlayingCard card = cards[cards.Count - 1];
         cards.RemoveAt(cards.Count - 1);
         return card;
+    }
+
+    public bool isEmpty()
+    {
+        return cards.Count <= 0;
     }
 }

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1e091b6ab5e2a69498b018d4df730d4d
+guid: 2b01833d6786906469017239fc303000
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5498659744019066566
-    second: card-spades-1_0
+      213: 9213952401200370327
+    second: card-diamonds-1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,7 +126,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: card-spades-1_0
+      name: card-diamonds-1_0
       rect:
         serializedVersion: 2
         x: 0
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a31d0019816d0b3b0800000000000000
-      internalID: -5498659744019066566
+      spriteID: 792d7ea24e88edf70800000000000000
+      internalID: 9213952401200370327
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      card-diamonds-1_0: 9213952401200370327
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

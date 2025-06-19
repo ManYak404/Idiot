@@ -10,8 +10,7 @@ public enum Suit
 
 public enum Rank
 {
-    Ace = 1,
-    Two,
+    Two = 2,
     Three,
     Four,
     Five,
@@ -22,6 +21,7 @@ public enum Rank
     Ten,
     Jack,
     Queen,
-    King
+    King,
+    Ace
 }
 

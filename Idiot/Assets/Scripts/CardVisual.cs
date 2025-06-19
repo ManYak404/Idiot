@@ -39,4 +39,9 @@ public class CardVisual : MonoBehaviour
             Debug.LogError($"Failed to load sprite at path: Resources/{path}");
         }
     }
+
+    public PlayingCard GetCard()
+    {
+        return cardData;
+    }
 }
