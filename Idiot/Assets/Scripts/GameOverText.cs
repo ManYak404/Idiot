@@ -10,9 +10,9 @@ public class GameOverText : MonoBehaviour
     void Start()
     {
         if (GameResults.playerWon)
-            resultText.text = "Player Won!";
+            resultText.text = "You Won!";
         else if (GameResults.botWon)
-            resultText.text = "Bot Won!";
+            resultText.text = "You Lost!";
         else
             resultText.text = "It's a Draw!";
     }

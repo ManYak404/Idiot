@@ -27,7 +27,7 @@ public class CardVisual : MonoBehaviour
         }
         else
         {
-            path = $"Cards/card-back1.png"; // e.g., Cards/card-back1
+            path = $"Cards/card-back" + (int)GameSetup.deckColor; // e.g., Cards/card-back1
             cardSprite = Resources.Load<Sprite>(path);
             gameObject.GetComponent<SpriteRenderer>().sprite = cardSprite;
         }
@@ -38,6 +38,12 @@ public class CardVisual : MonoBehaviour
         {
             Debug.LogError($"Failed to load sprite at path: Resources/{path}");
         }
+    }
+
+    public void SetFlip(bool isFaceUp)
+    {
+        cardData.isFaceUp = isFaceUp; // Update the card's face-up state
+        SetCard(cardData); // Call the original SetCard method to update the visual
     }
 
     public PlayingCard GetCard()

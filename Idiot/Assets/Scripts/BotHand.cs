@@ -14,6 +14,38 @@ public class BotHand : Hand
 
     }
 
+
+
+    public override bool CreateCardToHand(PlayingCard card)
+    {
+        card.isFaceUp = false; // Ensure the card is face down for the bot
+        return base.CreateCardToHand(card);
+    }
+
+    public override void PlaceCardInHand(GameObject card, int index)
+    {
+        // Ensure the card is face down when placed in the bot's hand
+        CardVisual cardVisual = card.GetComponent<CardVisual>();
+        if (cardVisual != null)
+        {
+            cardVisual.SetFlip(false);
+        }
+        base.PlaceCardInHand(card, index);
+    }
+
+    public override void RemoveCardFromHand(GameObject card)
+    {
+        // Ensure the card is face down when removed from the bot's hand
+        CardVisual cardVisual = card.GetComponent<CardVisual>();
+        if (cardVisual != null)
+        {
+            cardVisual.SetFlip(true);
+        }
+        base.RemoveCardFromHand(card);
+    }
+
+
+
     public void MakeBotMove()
     {
         GameObject battlefield = Manager.managerInstance.battlefields[Manager.managerInstance.currentBattlefieldIndex];

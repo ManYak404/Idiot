@@ -61,7 +61,7 @@ public class Hand : MonoBehaviour
         }
     }
 
-    public bool CreateCardToHand(PlayingCard card)
+    public virtual bool CreateCardToHand(PlayingCard card)
     {
         if (card == null)
         {
@@ -79,7 +79,7 @@ public class Hand : MonoBehaviour
         return true;
     }
 
-    public void PlaceCardInHand(GameObject card, int index)
+    public virtual void PlaceCardInHand(GameObject card, int index)
     {
         if (card != null)
         {
@@ -94,7 +94,7 @@ public class Hand : MonoBehaviour
         UpdateFanLayout();
     }
 
-    public void RemoveCardFromHand(GameObject card)
+    public virtual void RemoveCardFromHand(GameObject card)
     {
         if (cards.Contains(card))
         {

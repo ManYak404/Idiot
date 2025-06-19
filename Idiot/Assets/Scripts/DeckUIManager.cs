@@ -12,7 +12,7 @@ public class DeckUIManager : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        deckImage.sprite = Resources.Load<Sprite>($"Cards/card-back{(int)GameSetup.deckColor}"); // Load the deck image based on the selected color
     }
 
     // Update is called once per frame

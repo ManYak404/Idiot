@@ -46,15 +46,21 @@ public class Manager : MonoBehaviour
         deck.StartDeck(); // Initialize the deck
         trumpSuit = deck.GetTrumpCard().suit;
         GetComponent<DeckUIManager>().SetTrumpCard(deck.GetTrumpCard()); // Set the trump card in UI
-
-        playerHand = transform.Find("Player1Hand")?.gameObject.GetComponent<Hand>(); // Initialize bot's hand
-        playerHand.SetHandCenter(true); // Set player's hand center
-        botHand = transform.Find("Player2Hand")?.gameObject.GetComponent<BotHand>(); // Initialize bot's hand
-        botHand.SetHandCenter(false); // Set bot's hand center
-        
-        DrawCards(); // Draw initial cards for both players
-
-        ResetBattlefield(); // Reset battlefield at the start
+        switch (GameSetup.mode)
+        {
+            case GameMode.EasyBot:
+                StartEasyBotGame(); // Start Easy Bot game
+                break;
+            case GameMode.HardBot:
+                // StartHardBotGame(); // Implement Hard Bot game logic here
+                break;
+            case GameMode.Multiplayer:
+                // StartMultiplayerGame(); // Implement Multiplayer game logic here
+                break;
+            default:
+                Debug.LogError("Unknown game mode: " + GameSetup.mode);
+                break;
+        }
     }
 
     // Update is called once per frame
@@ -84,9 +90,23 @@ public class Manager : MonoBehaviour
 
 
 
+    private void StartEasyBotGame()
+    {
+        playerHand = transform.Find("Player1Hand")?.gameObject.GetComponent<Hand>(); // Initialize bot's hand
+        playerHand.SetHandCenter(true); // Set player's hand center
+        botHand = transform.Find("Player2Hand")?.gameObject.GetComponent<BotHand>(); // Initialize bot's hand
+        botHand.SetHandCenter(false); // Set bot's hand center
+        
+        DrawCards(); // Draw initial cards for both players
+
+        ResetBattlefield(); // Reset battlefield at the start
+    }
+
+
+
     private void CheckForVictory()
-    { 
-        if(playerWon || botWon)
+    {
+        if (playerWon || botWon)
         {
             return; // If either player has already won, skip further checks
         }
